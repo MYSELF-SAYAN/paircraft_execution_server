@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  execution-server:
+    build: .
+    container_name: execution-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /sandbox:/sandbox
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
