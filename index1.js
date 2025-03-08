@@ -2,10 +2,10 @@ const express = require("express");
 const { spawn } = require("child_process");
 const fs = require("fs");
 const path = require("path");
-
+const cors = require("cors");
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 const TIMEOUT_SECONDS = 5;
 const SANDBOX_DIR = "/sandbox";
 
